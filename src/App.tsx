@@ -1,6 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import BarraNavegacion from "./components/BarraNavegacion/BarraNavegacion";
 import BotonColor from "./components/BotonColor/BotonColor";
+import ListaEventos from "./components/ListaEventos/ListaEventos";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             <BotonColor />
           </Col>
           <Col md={6}>
-            {/* acá van los cursos, más adelante */}
+            <ListaEventos />
           </Col>
         </Row>
       </Container>
