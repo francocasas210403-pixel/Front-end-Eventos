@@ -1,24 +1,16 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Routes, Route } from "react-router-dom";
 import BarraNavegacion from "./components/BarraNavegacion/BarraNavegacion";
-import BotonColor from "./components/BotonColor/BotonColor";
-import ListaEventos from "./components/ListaEventos/ListaEventos";
+import PaginaInicio from "./pages/PaginaInicio";
+import PaginaEventos from "./pages/PaginaEventos";
 
 function App() {
   return (
     <>
       <BarraNavegacion />
-      <Container className="mt-4">
-        <Row>
-          <Col md={6}>
-            <h1>Pilar tecno</h1>
-            <p>Bienvenido al curso de React</p>
-            <BotonColor />
-          </Col>
-          <Col md={6}>
-            <ListaEventos />
-          </Col>
-        </Row>
-      </Container>
+      <Routes>
+        <Route path="/" element={<PaginaInicio />} />
+        <Route path="/eventos" element={<PaginaEventos />} />
+      </Routes>
     </>
   );
 }
