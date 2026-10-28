@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, Row, Col } from "react-bootstrap";
-import { obtenerEventos } from "../services/eventoServicio";
-import type { Evento } from "../types/Evento";
+import { obtenerEventos } from "../../services/eventoServicios";
+import type { Evento } from "../../types/Evento";
 
 const ListaEventos = () => {
   const [datos, setDatos] = useState<Evento[]>([]);
