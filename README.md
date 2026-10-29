@@ -5,7 +5,7 @@ Para ejecutar este frontend en tu entorno local, sigue estos pasos:
 
 1. Clonar el repositorio
 
-git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+git clone https://github.com/francocasas210403-pixel/Front-end-Eventos.git
 cd landing-pilar-tecno
 
 
