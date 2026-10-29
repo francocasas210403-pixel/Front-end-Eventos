@@ -4,6 +4,7 @@ import { obtenerEventos, crearEvento } from "../../services/eventoServicios";
 import type { Evento, EventoFormulario } from "../../types/Evento";
 import ModalEvento from "../ModalEvento/ModalEvento";
 
+
 const ListaEventos = () => {
   const [datos, setDatos] = useState<Evento[]>([]);
   const [cargando, setCargando] = useState(true);
