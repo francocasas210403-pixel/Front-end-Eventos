@@ -1,75 +1,78 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cómo correr el proyecto en local
 
-Currently, two official plugins are available:
+Para ejecutar este frontend en tu entorno local, sigue estos pasos:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Clonar el repositorio
 
-## React Compiler
+git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+cd landing-pilar-tecno
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+2. Instalar dependencias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. Iniciar el Backend (Requisito previo)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Asegúrate de tener corriendo tu API de Node.js/MongoDB en segundo plano (habitualmente en http://localhost:3000).
 
-```
+4. Ejecutar el servidor de desarrollo
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+npm run dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+5. Abrir la aplicación
 
-```
+Abre tu navegador e ingresa a la dirección que indique Vite (por defecto: http://localhost:5173).
+
+----------------------------------------------------
+
+
+API que Consume
+
+El frontend está conectado a la API REST de gestión de eventos * **Repositorio del Backend (API):** [Tp-Api-Eventos](https://github.com/francocasas210403-pixel/Tp-Api-Eventos)
+
+ABM Completo de Eventos:
+
+Alta: Crear eventos mediante un formulario validado con Formik/Yup.
+
+Lectura: Listar todos los eventos registrados con manejo de estados de carga y error.
+
+Modificación: Editar datos de un evento existente.
+
+Baja: Eliminar eventos con ventana de confirmación previa.
+
+Endpoints de negocios de la API:
+
+GET /eventos: Obtiene el listado completo de todos los eventos disponibles.
+
+POST /eventos: Da de alta (crea) un nuevo evento.
+
+PUT /eventos/:id (o PATCH): Modifica o edita un evento existente según su ID.
+
+DELETE /eventos/:id: Elimina un evento del sistema por su ID.
+
+GET /eventos/fecha/:fecha (o filtrado por parámetros): Busca y filtra los eventos que coincidan con una fecha específica.
+
+POST /eventos/:id/registrar: Endpoint de negocio clave para registrar un participante (nombre y email) en un evento puntual.
+
+
+
+----------------------------------------------------
+
+
+Tecnologías Utilizadas
+
+React + TypeScript
+
+Vite (Herramienta de compilación y servidor de desarrollo)
+
+React Router Dom (Navegación entre páginas sin recargar la pantalla)
+
+Bootstrap & React-Bootstrap (Componentes de diseño y maquetado)
+
+Axios (Gestión centralizada de peticiones HTTP desde services/)
+
+Formik & Yup (Construcción y validación estricta de formularios)
